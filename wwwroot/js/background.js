@@ -17,7 +17,7 @@ function createParticles() {
 }
 
 function animate() {
-    console.log("test")
+    /*console.log("test")*/
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     /*console.log("test1")*/
     for (let i = 0; i < particles.length; i++) {
