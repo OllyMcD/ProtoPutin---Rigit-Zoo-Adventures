@@ -1,6 +1,7 @@
 using ProtoPutin.Components;
 using ProtoPutin.Models;
 using Microsoft.EntityFrameworkCore;
+using MudBlazor.Services;
 
 namespace ProtoPutin
 {
@@ -13,6 +14,8 @@ namespace ProtoPutin
             // Add services to the container.
             builder.Services.AddRazorComponents()
                 .AddInteractiveServerComponents();
+
+            builder.Services.AddMudServices();
 
             builder.Services.AddDbContext<TlS2303831RzaContext>(options =>
             options.UseMySql(builder.Configuration.GetConnectionString("MySqlConnection"),

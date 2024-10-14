@@ -1,47 +1,85 @@
 ﻿@page "/booking"
+@rendermode InteractiveServer
+@using MudBlazor
+
 <br />
 <br />
 
 <div class="booking-container">
     <h1><strong>Booking Form</strong></h1>
 
-    <h3>Fill in the details below:</h3>
+    <h3>Unavailable Dates</h3>
 
-    <EditForm Model="@booking" OnValidSubmit="HandleValidSubmit" FormName="bookingForm">
+    <table>
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var unavailableDate in unavailableDates)
+            {
+                <tr @onclick="() => SelectDate(unavailableDate)" style="background-color: @(selectedDate == unavailableDate ? "lightblue" : "white")">
+                    <td>@unavailableDate.ToString("dd MMM yyyy")</td>
+                    <td>Unavailable</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <br />
+
+    <h3>Select a Date</h3>
+    <EditForm Model="@selectedDateModel" OnValidSubmit="@HandleValidSubmit" FormName="dateSelectionForm">
         <DataAnnotationsValidator />
         <ValidationSummary />
 
-        <table>
-            <thead>
-                <tr>
-                    <th>Field</th>
-                    <th>Value</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><label for="name">Name:</label></td>
-                    <td><InputText id="name" @bind-Value="@booking.Name" /></td>
-                </tr>
-                <tr>
-                    <td><label for="date">Date:</label></td>
-                    <td><InputDate id="date" @bind-Value="@booking.Date" /></td>
-                </tr>
-                <!-- Add more fields if necessary -->
-            </tbody>
-        </table>
-
-        <button type="submit">Submit</button>
+        <InputDate @bind-Value="selectedDateModel.Date" />
+        <button type="submit">Select Date</button>
     </EditForm>
 
-    <!-- Image below the form -->
+    <h4>Currently Selected Date: @selectedDate?.ToString("dd MMM yyyy")</h4>
+
     <br />
-    <br />
-    <div class="booking-image">
-        <img src="images/BookingCalender.png" alt="Booking Calendar" />
-    </div>
+
+    <h3>Booking Information</h3>
+    <EditForm Model="@bookingModel" OnValidSubmit="@HandleBookingSubmit">
+        <DataAnnotationsValidator />
+        <ValidationSummary />
+
+        <div>
+            <label>Name:</label>
+            <InputText @bind-Value="bookingModel.Name" required />
+        </div>
+
+        <div>
+            <label>Surname:</label>
+            <InputText @bind-Value="bookingModel.Surname" required />
+        </div>
+
+        <div>
+            <label>Email:</label>
+            <InputText @bind-Value="bookingModel.Email" type="email" required />
+        </div>
+
+        <div>
+            <label>Phone Number:</label>
+            <InputText @bind-Value="bookingModel.PhoneNumber" required />
+        </div>
+
+        <div>
+            <label>Password:</label>
+            <InputText @bind-Value="bookingModel.Password" type="password" required />
+        </div>
+
+        <button type="submit">Submit Booking</button>
+    </EditForm>
 
     <!-- Contact section -->
+
+    <br /><br /> 
+
     <div class="contact-section">
         <h3>Contact Us:</h3>
         <p>Email: <a href="mailto:info@protozoo.com">info@protozoo.com</a></p>
@@ -53,3 +91,50 @@
         <a href="https://www.instagram.com" target="_blank">Instagram</a>
     </div>
 </div>
+
+@code {
+    private List<DateTime> unavailableDates = new List<DateTime>
+    {
+        new DateTime(2024, 11, 15),
+        new DateTime(2024, 11, 22),
+        new DateTime(2024, 11, 29),
+    };
+
+    private DateTime? selectedDate;
+    private SelectedDateModel selectedDateModel = new SelectedDateModel();
+
+    private BookingModel bookingModel = new BookingModel();
+
+    private void HandleValidSubmit()
+    {
+        // This method is called when a date is selected
+        selectedDate = selectedDateModel.Date;
+    }
+
+    private void HandleBookingSubmit()
+    {
+        // Handle the booking submission logic here
+        // For now, just displaying the entered information in console
+        Console.WriteLine($"Name: {bookingModel.Name}, Surname: {bookingModel.Surname}, Email: {bookingModel.Email}, Phone: {bookingModel.PhoneNumber}");
+    }
+
+    private void SelectDate(DateTime date)
+    {
+        selectedDate = date;
+        selectedDateModel.Date = date;
+    }
+
+    public class SelectedDateModel
+    {
+        public DateTime Date { get; set; }
+    }
+
+    public class BookingModel
+    {
+        public string Name { get; set; } = string.Empty;
+        public string Surname { get; set; } = string.Empty;
+        public string Email { get; set; } = string.Empty;
+        public string PhoneNumber { get; set; } = string.Empty;
+        public string Password { get; set; } = string.Empty;
+    }
+}
