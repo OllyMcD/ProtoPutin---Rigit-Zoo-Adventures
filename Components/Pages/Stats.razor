@@ -1,0 +1,40 @@
+﻿@page "/statistics"
+
+<br />
+<br /> 
+<br />
+<h3>Statistics Page</h3>
+
+<button @onclick="ToggleDebugMode">Toggle Debug Mode</button>
+
+@if (isDebugMode)
+{
+    <div class="overlay">
+        <div class="debug-screen">
+            <h4>Debug Information</h4>
+            <p>Current Time: @DateTime.Now</p>
+            <p>Data Fetch Status: @fetchStatus</p>
+            <p>Loaded Statistics Count: @statsCount</p>
+            <button @onclick="ToggleDebugMode">Close</button> <!-- Close button -->
+        </div>
+    </div>
+}
+
+@code {
+    private bool isDebugMode = false;
+    private string fetchStatus = "Not Started";
+    private int statsCount = 0;
+
+    protected override async Task OnInitializedAsync()
+    {
+        fetchStatus = "Fetching Data...";
+        await Task.Delay(100); // Simulate a delay for fetching data
+        statsCount = 42; // Example count after fetching data
+        fetchStatus = "Completed";
+    }
+
+    private void ToggleDebugMode()
+    {
+        isDebugMode = !isDebugMode; // Toggle debug mode
+    }
+}

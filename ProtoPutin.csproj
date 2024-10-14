@@ -1,0 +1,45 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Remove="wwwroot\images\Animal-feeding.jpg" />
+    <Content Remove="wwwroot\images\bear.jpg" />
+    <Content Remove="wwwroot\images\BookingCalender.png" />
+    <Content Remove="wwwroot\images\Conservation.jpg" />
+    <Content Remove="wwwroot\images\elephant.jpg" />
+    <Content Remove="wwwroot\images\Family-day.jpg" />
+    <Content Remove="wwwroot\images\john-pork-profile.jpg" />
+    <Content Remove="wwwroot\images\MainPage1.jpg" />
+    <Content Remove="wwwroot\images\MainPage3.jpg" />
+    <Content Remove="wwwroot\images\Nature-walk.jpg" />
+    <Content Remove="wwwroot\images\Photography.jpg" />
+    <Content Remove="wwwroot\images\School-trip.jpg" />
+    <Content Remove="wwwroot\images\Special-events.jpg" />
+    <Content Remove="wwwroot\images\Visitor-hero.jpeg" />
+    <Content Remove="wwwroot\images\Visitor-hero.jpg.avif" />
+    <Content Remove="wwwroot\images\Wildlife-safari.webp" />
+    <Content Remove="wwwroot\images\Workshop.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="wwwroot\images\Animal-feeding.jpg" />
+    <Resource Include="wwwroot\images\BookingCalender.png" />
+    <Resource Include="wwwroot\images\Conservation.jpg" />
+    <Resource Include="wwwroot\images\Family-day.jpg" />
+    <Resource Include="wwwroot\images\john-pork-profile.jpg" />
+    <Resource Include="wwwroot\images\MainPage1.jpg" />
+    <Resource Include="wwwroot\images\MainPage3.jpg" />
+    <Resource Include="wwwroot\images\Nature-walk.jpg" />
+    <Resource Include="wwwroot\images\Photography.jpg" />
+    <Resource Include="wwwroot\images\School-trip.jpg" />
+    <Resource Include="wwwroot\images\Special-events.jpg" />
+    <Resource Include="wwwroot\images\Wildlife-safari.webp" />
+    <Resource Include="wwwroot\images\Workshop.jpg" />
+  </ItemGroup>
+
+</Project>

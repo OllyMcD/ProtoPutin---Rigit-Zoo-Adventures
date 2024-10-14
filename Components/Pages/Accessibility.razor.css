@@ -1,0 +1,54 @@
+﻿/* General Styles for Accessibility Page */
+.accessibility-container {
+    padding: 303px;
+    box-sizing: border-box;
+    background-color: #F3CA5F; /* Yellow background to match main page */
+    color: #333; /* Dark text for readability */
+    font-size: 1rem; /* Base font size */
+    text-align: center; /* Center align text */
+}
+
+/* High Contrast Mode Styles */
+.high-contrast {
+    background-color: black; /* Dark background for high contrast */
+    color: yellow; /* Bright text for visibility */
+}
+
+/* Font Size Adjustments */
+.font-large {
+    font-size: 2.5rem; /* Larger font size */
+}
+
+/* Buttons */
+.accessibility-button {
+    padding: 10px 20px;
+    background-color: #5C3A17; /* Dark button background */
+    color: white; /* Button text color */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+    .accessibility-button:hover {
+        background-color: #3e2a15; /* Darker shade on hover */
+    }
+
+/* Centering the options list */
+.options-list {
+    list-style-type: none; /* Remove bullet points */
+    padding: 0; /* Remove padding */
+}
+
+    .options-list li {
+        margin-bottom: 50px; /* Space between items */
+    }
+
+/* Headings */
+h2, h3 {
+    margin-top: 20px; /* Space above headings */
+    margin-bottom: 10px; /* Space below headings */
+}
+
+/* Add other styles as needed */
+

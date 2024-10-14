@@ -1,0 +1,146 @@
+﻿@page "/"
+
+<!-- Global styles -->
+<link href="css/styles.css" rel="stylesheet" />
+
+<!-- Canvas for animated background -->
+<canvas id="animatedBackground"></canvas>
+
+<!-- Header Section -->
+<header class="header">
+    <a href="/" class="logo">
+        <img src="images/logo.png" alt="Rigit Zoo Adventure Logo - Logo" />
+    </a>
+    <div class="title">Rigit Zoo Adventure</div>
+</header>
+
+<!-- Navbar -->
+<div class="top-row px-4 navbar-fixed">
+    <div class="container-fluid d-flex justify-content-between align-items-center">
+        <a class="navbar-brand" href="/">
+            <img src="images/logo.png" alt="Rigit Zoo Adventure Logo" class="logo-img" />
+        </a>
+        <nav class="navbar-menu">
+            <p class="nav-link"><a href="/">Home</a></p>
+            <p class="nav-link"><a href="/booking">Bookings</a></p>
+            <p class="nav-link"><a href="/events">Events</a></p>
+            <p class="nav-link"><a href="/visitor-info">Visitor Info</a></p>
+        </nav>
+        <!-- Accessibility Settings Button -->
+        <a href="/accessibility" class="accessibility-settings">
+            <img src="images/SettingsLogo1.png" alt="Settings" class="settings-icon" />
+        </a>
+    </div>
+</div>
+
+<!-- Full-Screen Hero Section -->
+<section class="hero">
+    <div class="hero-content">
+        <h1>Welcome to Rigit Zoo Adventure</h1>
+        <p>Explore the wild like never before.</p>
+        <a href="/visitor-info" class="cta-button">Plan Your Visit</a>
+    </div>
+</section>
+
+<!-- Featured Animal Section -->
+<section class="featured-animal">
+    <h2>Animal of the Month</h2>
+    <img src="images/animal-of-the-month.jpg" alt="Featured animal of the month" />
+    <p>Learn more about this amazing animal and its habitat!</p>
+</section>
+
+<!-- Sectioned Content -->
+<section class="featured-section">
+    <div class="grid-container">
+        <div class="grid-item">
+            <img src="images/MainPage1.jpg" alt="Bear" />
+            <h3>Explore the Wild</h3>
+            <p>Discover our diverse range of animals.</p>
+        </div>
+        <div class="grid-item">
+            <img src="images/MainPage2.jpg" alt="Elephant" />
+            <h3>Upcoming Events</h3>
+            <p>Stay updated on the latest zoo events.</p>
+        </div>
+        <div class="grid-item">
+            <img src="images/MainPage3.jpg" alt="Tourists" />
+            <h3>Visitor Info</h3>
+            <p>Plan your visit and learn about our facilities.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Zoo Map Section -->
+<section class="map">
+    <h2>Interactive Zoo Map</h2>
+    <iframe src="https://www.kerryhyndman.co.uk/edinburgh-zoo-map-1" title="Interactive Zoo Map" width="500" height="700"></iframe>
+</section>
+
+<!-- Testimonials Section -->
+<section class="testimonials">
+    <h2>Visitor Testimonials</h2>
+
+    <!-- John Pork Testimonial -->
+    <blockquote>
+        <p>
+            "An amazing experience! The animals are well cared for and the staff is friendly."
+        </p>
+        <cite>
+            - <a href="#" onclick="toggleProfile(event)">John Pork</a>
+        </cite>
+    </blockquote>
+
+    <!-- Hidden profile section for John Pork -->
+    <div class="profile" id="johnPorkProfile" style="display: none;">
+        <img src="images/john-pork-profile.jpg" alt="John Pork's Profile Picture" />
+        <p>John Pork</p>
+        <p>Frequent Visitor, loves the elephant exhibit.</p>
+    </div>
+</section>
+
+<!-- Inline JavaScript -->
+<script>
+    function toggleProfile(event) {
+        event.preventDefault(); // Prevent the default link action
+        var profileDiv = document.getElementById('johnPorkProfile');
+
+        // Toggle visibility using 'block' and 'none'
+        if (profileDiv.style.display === 'block') {
+            profileDiv.style.display = 'none'; // Hide the profile
+        } else {
+            profileDiv.style.display = 'block'; // Show the profile
+        }
+    }
+</script>
+
+
+
+
+
+<!-- Newsletter Section -->
+<section class="newsletter">
+    <h2>Stay Updated!</h2>
+    <form action="/subscribe" method="post">
+        <input type="email" name="email" placeholder="Enter your email" required />
+        <button type="submit">Subscribe</button>
+    </form>
+</section>
+
+<!-- Footer Section -->
+<footer class="footer">
+    <div class="contact-info">
+        <p>Contact Us: (123) 456-7890</p>
+        <p>Email: info@rigitzoo.com</p>
+    </div>
+    <div class="social-media">
+        <a href="https://facebook.com/rigitzoo" target="_blank">Facebook</a>
+        <a href="https://twitter.com/rigitzoo" target="_blank">Twitter</a>
+        <a href="https://instagram.com/rigitzoo" target="_blank">Instagram</a>
+    </div>
+</footer>
+
+<!-- JavaScript for the animated background and animations -->
+<script src="js/background.js"></script>
+
+
+

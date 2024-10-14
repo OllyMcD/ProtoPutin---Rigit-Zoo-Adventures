@@ -1,0 +1,89 @@
+﻿/* Hero Section */
+.visitor-info-hero {
+    background: url('images/Visitor-hero.jpeg') no-repeat center center;
+    background-size: cover;
+    color: white;
+    text-align: center;
+    padding: 50px 20px;
+}
+
+/* Fun Facts Section */
+.fun-facts {
+    background-color: #F3CA5F;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.fact-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.fact {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    padding: 20px;
+    flex: 1 0 30%; /* Responsive flex item */
+    transition: transform 0.3s;
+}
+
+    .fact:hover {
+        transform: translateY(-5px);
+    }
+
+/* Amenities Section */
+.amenities {
+    background-color: #FFCC00;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.amenity-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.amenity {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    padding: 20px;
+    flex: 1 0 30%; /* Responsive flex item */
+    transition: transform 0.3s;
+}
+
+    .amenity:hover {
+        transform: translateY(-5px);
+    }
+
+/* Zoo Map Section */
+.zoo-map {
+    padding: 20px;
+    text-align: center;
+}
+
+/* Guidelines Section */
+.guidelines {
+    background-color: #F9F9F9;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+/* Contact Information Section */
+.contact-info {
+    background-color: #FFCC00;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .fact-container, .amenity-container {
+        flex-direction: column;
+    }
+}

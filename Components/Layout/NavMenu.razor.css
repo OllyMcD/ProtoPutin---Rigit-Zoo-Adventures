@@ -1,0 +1,108 @@
+/* Remove unnecessary margin or padding to close the gap */
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/* Ensure header and navbar are aligned and at the top */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #5C3A17; /* Match your theme */
+    z-index: 1000;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.container-fluid {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-brand {
+    color: #F3CA5F; /* Adjust color to match your theme */
+    font-size: 1.5rem;
+    text-decoration: none;
+}
+
+.navbar-secBrand {
+    color: #B59645; /* Adjust color to match your theme */
+    font-size: 1.5rem;
+    text-decoration: none;
+}
+
+    /* Adjust the title styling to sit next to the navbar */
+    .site-title {
+    font-size: 1.5rem;
+    color: white;
+    margin: 0;
+    padding-left: 1rem;
+}
+
+/* Positioning for the navbar toggle and menu */
+.navbar-toggler {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    appearance: none;
+    background: none;
+    border: none;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+}
+
+/* Scrollable navigation menu */
+.nav-scrollable {
+    position: fixed;
+    top: 60px; /* Below the header */
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 60px); /* Adjust for the height of the header */
+    background-color: rgba(0, 0, 0, 0.9);
+    overflow-y: auto;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+}
+
+.navbar-toggler:checked ~ .nav-scrollable {
+    transform: translateX(0);
+}
+
+.nav-item {
+    padding: 1rem;
+}
+
+.nav-link {
+    color: #d7d7d7;
+    text-decoration: none;
+    display: block; /* Makes the entire area clickable */
+    transition: background-color 0.3s, color 0.3s;
+}
+
+    .nav-link:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+        color: white;
+    }
+
+/* Ensure other content does not overlap the navbar */
+body {
+    padding-top: 60px; /* Adjust according to the height of the header */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .nav-scrollable {
+        padding: 1rem; /* Add some padding for mobile */
+    }
+
+    .navbar-toggler {
+        top: 0.5rem;
+        right: 0.5rem;
+    }
+}

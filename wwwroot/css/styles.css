@@ -1,0 +1,97 @@
+﻿/* General Page Structure */
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: #F3CA5F; /* Yellow color */
+}
+
+/* Header Styling */
+.header {
+    width: 100%;
+    background-color: #F3CA5F;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    border-bottom: 10px solid #5C3A17;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo img {
+    width: 50px;
+    height: auto;
+}
+
+.title {
+    font-size: 36px;
+    font-weight: bold;
+    color: black;
+}
+
+/* Navbar Styling */
+.navbar-fixed {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: rgba(243, 202, 95, 0.8);
+    z-index: 1000;
+    border-bottom: 5px solid #5C3A17;
+}
+
+.navbar-menu {
+    width: 100%;
+}
+
+.navbar-links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+.navbar-link {
+    flex: 1;
+    text-align: center;
+    font-weight: bold;
+    padding: 15px;
+}
+
+    .navbar-link a {
+        text-decoration: none;
+        color: black;
+    }
+
+        .navbar-link a:hover {
+            color: #5C3A17;
+        }
+
+/* Footer Section */
+.footer {
+    padding: 20px;
+    background-color: #5C3A17;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+    .footer a {
+        color: white;
+        text-decoration: none;
+        margin-left: 15px;
+    }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .header .title {
+        font-size: 24px;
+    }
+}

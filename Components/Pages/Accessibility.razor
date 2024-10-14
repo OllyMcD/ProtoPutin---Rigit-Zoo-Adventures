@@ -1,0 +1,70 @@
+﻿@page "/accessibility"
+@rendermode InteractiveServer
+
+<!-- Local styles for accessibility page -->
+<link href="css/accessibility.css" rel="stylesheet" />
+
+<div class="accessibility-container">
+    <h1>Settings</h1>
+    <p>Welcome to our Settings Help page. Here are some features you can adjust:</p>
+
+    <br /> <!-- Three line breaks for separation -->
+    <br />
+    <br />
+
+
+    <ul class="options-list">
+        <li>Enable High Contrast Mode</li>
+        <button class="accessibility-button" @onclick="ToggleHighContrastMode">Toggle High Contrast</button>
+
+        <li>Increase Text Size</li>
+        <button class="accessibility-button" @onclick="IncreaseTextSize">Increase Text Size</button>
+
+        <li>Keyboard Navigation Tips</li>
+        <button class="accessibility-button" @onclick="ShowKeyboardNavigationTips">Show Keyboard Navigation Tips</button>
+
+        <li>Music Sound</li>
+        <button class="accessibility-button" @onclick="ToggleMusicSound">Toggle Music Sound</button>
+
+        <li>Language</li>
+        <button class="accessibility-button" @onclick="ChangeLanguage">Change Language</button>
+        <!-- You can expand more features here -->
+    </ul>
+</div>
+
+<!-- JavaScript for accessibility-specific functionality -->
+<script src="js/accessibility.js"></script>
+
+@code {
+    [Inject] public IJSRuntime JS { get; set; }
+
+    // Method to toggle high contrast mode via JS Interop
+    public async Task ToggleHighContrastMode()
+    {
+        if (JS != null)
+        {
+            await JS.InvokeVoidAsync("toggleHighContrastMode");
+        }
+    }
+
+    // Placeholder methods for other functionalities
+    public void IncreaseTextSize()
+    {
+        // Implement text size increase functionality here
+    }
+
+    public void ShowKeyboardNavigationTips()
+    {
+        // Implement keyboard navigation tips functionality here
+    }
+
+    public void ToggleMusicSound()
+    {
+        // Implement music sound toggle functionality here
+    }
+
+    public void ChangeLanguage()
+    {
+        // Implement language change functionality here
+    }
+}

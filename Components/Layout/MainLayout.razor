@@ -1,0 +1,27 @@
+﻿@inherits LayoutComponentBase
+
+<div class="page">
+    <div class="sidebar">
+        <NavMenu />
+    </div>
+
+    <main>
+        <article class="content px-4">
+            @Body
+        </article>
+    </main>
+</div>
+
+<!-- Background Video -->
+<div class="hidden-video-container">
+    <iframe src="https://www.youtube.com/embed/qMtkZpd6LZs?autoplay=1&loop=1&mute=1&playlist=qMtkZpd6LZs"
+            frameborder="0" allow="autoplay" allowfullscreen></iframe>
+</div>
+
+<div id="blazor-error-ui">
+    An unhandled error has occurred.
+    <a href="" class="reload">Reload</a>
+    <a class="dismiss">🗙</a>
+</div>
+
+<script src="js/site.js"></script>
